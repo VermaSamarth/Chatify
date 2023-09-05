@@ -15,8 +15,28 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.register');
 });
+
+
+Route::middleware(['auth','verified'])->group(function(){
+    Route::get('/chats',function(){
+        return view('chats');
+    })->name('chats');
+    
+    Route::get('/groups',function(){
+        return view('groups');
+    })->name('groups');
+
+    Route::get('/contacts',function(){
+        return view('contacts');
+    })->name('contacts');
+});
+
+
+
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

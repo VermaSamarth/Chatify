@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            <img src="{{asset('appdata/dashboard.gif')}}" alt="" srcset="" width="175px">
+        <h2 class="items-center font-semibold text-xl text-gray-800 leading-tight">
+            <img src="{{asset('appdata/conversations.gif')}}" alt="" srcset="" width="240px">
         </h2>
     </x-slot>
 

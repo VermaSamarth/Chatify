@@ -6,14 +6,32 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <img src="{{asset('appdata/chatify.png')}}" alt="" width="50px" style="bottom-padding: 30px">
+                        <img src="{{asset('appdata/chatifylogo.gif')}}" alt="" width="70px" style="bottom-padding: 30px">
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="left-items hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
+                    </x-nav-link>
+                </div>
+
+                <div class="left-items hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('chats')" :active="request()->routeIs('chats')">
+                        {{ __('Chats') }}
+                    </x-nav-link>
+                </div>
+
+                <div class="left-items hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('groups')" :active="request()->routeIs('groups')">
+                        {{ __('Groups') }}
+                    </x-nav-link>
+                </div>
+
+                <div class="left-items hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('contacts')" :active="request()->routeIs('contacts')">
+                        {{ __('Contacts') }}
                     </x-nav-link>
                 </div>
             </div>
