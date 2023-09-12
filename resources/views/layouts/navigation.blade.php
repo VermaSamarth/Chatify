@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<nav x-data="{ open: false }"  style="background-image: url('appdata/background.png');background-repeat: no-repeat; background-size: cover;">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
@@ -11,25 +11,25 @@
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="left-items hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="left-items hidden space-x-8 sm:-my-px sm:ml-10 sm:flex " style="color: #fff;">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
 
-                <div class="left-items hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="left-items hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="color: #fff">
                     <x-nav-link :href="route('chats')" :active="request()->routeIs('chats')">
                         {{ __('Chats') }}
                     </x-nav-link>
                 </div>
 
-                <div class="left-items hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="left-items hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="color: #fff">
                     <x-nav-link :href="route('groups')" :active="request()->routeIs('groups')">
                         {{ __('Groups') }}
                     </x-nav-link>
                 </div>
 
-                <div class="left-items hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <div class="left-items hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="color: #fff">
                     <x-nav-link :href="route('contacts')" :active="request()->routeIs('contacts')">
                         {{ __('Contacts') }}
                     </x-nav-link>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,17 +21,23 @@ Route::get('/', function () {
 
 
 Route::middleware(['auth','verified'])->group(function(){
+
+    // ------------ Personal Chats -------------
     Route::get('/chats',function(){
         return view('chats');
     })->name('chats');
     
+    // ------------- Group Chats ---------------
     Route::get('/groups',function(){
         return view('groups');
     })->name('groups');
 
-    Route::get('/contacts',function(){
-        return view('contacts');
-    })->name('contacts');
+    // ------------ Contacts --------------
+    Route::get('/contacts',[ContactsController::class,'display_contacts'])->name('contacts');
+
+    Route::get('/contacts/form',[ContactsController::class,'add_contacts_form'])->name('form_contacts');
+
+    Route::post('contact/add',[ContactsController::class,'add_contacts'])->name('add_contacts');
 });
 
 
