@@ -1,12 +1,13 @@
-<nav x-data="{ open: false }"  style="background-image: url('appdata/background.png');background-repeat: no-repeat; background-size: cover;">
+
+<nav x-data="{ open: false }"  >
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('dashboard') }}">
-                        <img src="{{asset('appdata/chatifylogo.gif')}}" alt="" width="70px" style="bottom-padding: 30px">
+                    <a href="{{ route('dashboard') }}"> 
+                        <img src="{{asset('appdata/socially-nobg-white.png')}}" alt="" width="100px" style="padding-top:10px">
                     </a>
                 </div>
 
@@ -30,8 +31,8 @@
                 </div>
 
                 <div class="left-items hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" style="color: #fff">
-                    <x-nav-link :href="route('contacts')" :active="request()->routeIs('contacts')">
-                        {{ __('Contacts') }}
+                    <x-nav-link :href="route('buddies')" :active="request()->routeIs('buddies')">
+                        {{ __('Buddies') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -84,9 +85,27 @@
 
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
-        <div class="pt-2 pb-3 space-y-1">
+        <div class="pt-2 pb-3 space-y-1" style="color: #fff;">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
+            </x-responsive-nav-link>
+        </div>
+
+        <div class="pt-2 pb-3 space-y-1" style="color: #fff;">
+            <x-responsive-nav-link :href="route('chats')" :active="request()->routeIs('chats')">
+                {{ __('Chats') }}
+            </x-responsive-nav-link>
+        </div>
+
+        <div class="pt-2 pb-3 space-y-1" style="color: #fff;">
+            <x-responsive-nav-link :href="route('groups')" :active="request()->routeIs('groups')">
+                {{ __('Groups') }}
+            </x-responsive-nav-link>
+        </div>
+
+        <div class="pt-2 pb-3 space-y-1" style="color: #fff;">
+            <x-responsive-nav-link :href="route('buddies')" :active="request()->routeIs('buddies')">
+                {{ __('Buddies') }}
             </x-responsive-nav-link>
         </div>
 

@@ -4,7 +4,26 @@
             {{ __("Contacts Form") }}
         </h2>
     </x-slot>
-
+    <div class="container mt-5" style="max-width: 600px;">
+        <div classs="form-group">
+            <input type="text" id="search" name="search" placeholder="Search" class="form-control" />
+        </div>
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js">
+    </script>
+    <script type="text/javascript">
+        var route = "{{ url('autocomplete-search') }}";
+        $('#search').typeahead({
+            source: function (query, process) {
+                return $.get(route, {
+                    query: query
+                }, function (data) {
+                    return process(data);
+                });
+            }
+        });
+    </script>
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg"> 
@@ -18,6 +37,7 @@
                                     <tr>
                                         <td style="padding: 8px;"><label for="contact_name">Contact Name:</label></td>
                                         <td style="padding: 8px;"><input type="text" id="contact_name" name="contact_name" required><br><br></td>
+                                        
                                     </tr>
 
                                     <tr>

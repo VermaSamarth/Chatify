@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class ContactsController extends Controller
 {
     // -------------Display the Contacts-------------
-    public function display_contacts(){
+    public function display_buddies(){
         $contacts = contact::all();
         return view('contacts',['contacts'=>$contacts]);
     }

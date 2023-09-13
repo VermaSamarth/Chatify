@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            <img src="{{asset('appdata/group_convo.gif')}}" alt="" srcset="" width="340px">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight" style="color: #fff; font-size: 1.75rem;">
+            {{ __("Group Conversations") }}
         </h2>
     </x-slot>
 

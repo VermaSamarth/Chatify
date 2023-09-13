@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,11 +34,14 @@ Route::middleware(['auth','verified'])->group(function(){
     })->name('groups');
 
     // ------------ Contacts --------------
-    Route::get('/contacts',[ContactsController::class,'display_contacts'])->name('contacts');
+    Route::get('/contacts',[ContactsController::class,'display_buddies'])->name('buddies');
 
     Route::get('/contacts/form',[ContactsController::class,'add_contacts_form'])->name('form_contacts');
 
     Route::post('contact/add',[ContactsController::class,'add_contacts'])->name('add_contacts');
+
+    Route::get('/contacts/search', [SearchController::class, 'index']);
+    Route::get('contacts/autosearch',[SearchController::class,'autocompleteSearch'])->name('auto-search');
 });
 
 
