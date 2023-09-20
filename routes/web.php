@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ChatController;
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SearchController;
@@ -24,9 +25,13 @@ Route::get('/', function () {
 Route::middleware(['auth','verified'])->group(function(){
 
     // ------------ Personal Chats -------------
-    Route::get('/chats',function(){
-        return view('chats');
-    })->name('chats');
+    Route::get('/chats',[ChatController::class,'display_chat'])->name('chats');
+
+    Route::get('/chats/section/{id}',[ChatController::class,'open_chat'])->name('chat-section');
+
+    Route::post('/chats/message-input/{id}',[ChatController::class,'chat_message'])->name('chat-message');
+
+    Route::get('/chats/new-chat',[ChatController::class,'new_chat'])->name('new-chat');
     
     // ------------- Group Chats ---------------
     Route::get('/groups',function(){
@@ -38,10 +43,17 @@ Route::middleware(['auth','verified'])->group(function(){
 
     Route::get('/contacts/form',[ContactsController::class,'add_contacts_form'])->name('form_contacts');
 
-    Route::post('contact/add',[ContactsController::class,'add_contacts'])->name('add_contacts');
+    Route::post('contacts/add',[ContactsController::class,'add_contacts'])->name('add_contacts');
 
+    // -------------- Search Menu --------------
     Route::get('/contacts/search', [SearchController::class, 'index']);
-    Route::get('contacts/autosearch',[SearchController::class,'autocompleteSearch'])->name('auto-search');
+
+    Route::get('/contacts/autosearch',[SearchController::class,'autocompleteSearch'])->name('auto-search');
+
+    // -------------- About --------------
+    Route::get('/about',function(){
+        return view('aboutus');
+    })->name('about');
 });
 
 

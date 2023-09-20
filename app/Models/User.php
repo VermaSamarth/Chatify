@@ -43,4 +43,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function is_contact(){
+        return $this->hasMany(contact::class,'id','user_id_1');
+    }
 }

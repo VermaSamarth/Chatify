@@ -1,7 +1,8 @@
 <x-app-layout>
     <x-slot name="header">
         <h1 class="font-semibold text-xl text-white-100 leading-tight" style="color: #fff; font-size: 1.75rem;">
-            {{ __("Dashboard") }}
+            {{ __("About us") }}
+            <img src="{{asset('appdata/socially-nobg-white.png')}}" alt="" srcset="" width="200px">
         </h1>
     </x-slot>
 
@@ -10,7 +11,6 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     {{ __("You're logged in!") }}
-                    <img src="{{asset('appdata/socially-nobg.png')}}" alt="" srcset="">
                 </div>
             </div>
         </div>
